@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var mongoose = require("mongoose");
 
@@ -12,7 +12,7 @@ var sortAnswers = function(a, b) {
 		return b.updatedAt - a.updatedAt;
 	}
 	return b.votes - a.votes;
-};
+}
 
 var AnswerSchema = new Schema({
 	text: String,

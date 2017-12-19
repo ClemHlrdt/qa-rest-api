@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var express = require("express");
 var router = express.Router();
@@ -17,7 +17,7 @@ router.param("qID", function(req,res,next,id){
 	});
 });
 
-router.param("aID", function(err,req,res,next,id){
+router.param("aID", function(req,res,next,id){
 	req.answer = req.question.answers.id(id);
 	if(!req.answer) {
 		err = new Error("Not Found");
@@ -31,11 +31,11 @@ router.param("aID", function(err,req,res,next,id){
 // Route for questions collection
 router.get("/", function(req, res, next){
 	Question.find({})
-		.sort({createdAt: -1})
-		.exec(function(err, questions){
-			if(err) return next(err);
-			res.json(questions);
-		});
+				.sort({createdAt: -1})
+				.exec(function(err, questions){
+					if(err) return next(err);
+					res.json(questions);
+				});
 });
 
 // POST /questions
